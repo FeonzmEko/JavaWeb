@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表格示例</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            /* 合并边框 */
+            width: 60%;
+            margin: 20px auto;
+        }
+
+        th,
+        td {
+            border: 1px solid #333;
+            padding: 8px 12px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-top: 1px solid #ccc;
+            font-size: 14px;
+            color: #555;
+        }
+
+        #container {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        /* tbody tr:hover {
+            background-color: lightpink;
+        } */
+
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <h2 style="text-align:center;">人员信息表</h2>
+    <table>
+        <!-- 表格表头部分 -->
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>年龄</th>
+                <th>性别</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <!-- 表格主体部分 -->
+        <tbody>
+            <tr>
+                <td>张三</td>
+                <td>25</td>
+                <td>男</td>
+                <!-- 一个编辑按钮，一个删除按钮 -->
+                <td>
+                    <button>编辑</button>
+                    <button>删除</button>
+                </td>
+            </tr>
+            <tr>
+                <td>李四</td>
+                <td>30</td>
+                <td>女</td>
+                <td>
+                    <button>编辑</button>
+                    <button>删除</button>
+                </td>
+            </tr>
+            <tr>
+                <td>王五</td>
+                <td>28</td>
+                <td>男</td>
+                <td>
+                    <button>编辑</button>
+                    <button>删除</button>
+                </td>
+            </tr>
+            <tr>
+                <td>麻子</td>
+                <td>22</td>
+                <td>男</td>
+                <!-- 一个编辑按钮，一个删除按钮 -->
+                <td>
+                    <button>编辑</button>
+                    <button>删除</button>
+                </td>
+            </tr>
+            <tr>
+                <td>小丑</td>
+                <td>24</td>
+                <td>男</td>
+                <!-- 一个编辑按钮，一个删除按钮 -->
+                <td>
+                    <button>编辑</button>
+                    <button>删除</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <footer>
+        <p>© 2025 FeonzmEko | 保留所有权利</p>
+        <p>Powered by FeonzmEko</p>
+    </footer>
+    <script>
+        // 获取所有表格行（排除表头）
+        const rows = document.querySelectorAll("table tbody tr");
+
+        rows.forEach(row => {
+            // 鼠标移入
+            row.addEventListener("mouseenter", () => {
+                row.style.backgroundColor = "lightpink";
+            });
+            // 鼠标移出
+            row.addEventListener("mouseleave", () => {
+                row.style.backgroundColor = "";
+            });
+        });
+    </script>
+
+    </div>
+</body>
+
+</html>

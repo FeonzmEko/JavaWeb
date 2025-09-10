@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>交互示例</title>
+    <style>
+        body {
+            font-family: "Microsoft YaHei", sans-serif;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 60%;
+            margin: 20px auto;
+        }
+
+        th,
+        td {
+            border: 1px solid #333;
+            padding: 8px 12px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-top: 1px solid #ccc;
+            font-size: 14px;
+            color: #555;
+        }
+
+        #container {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        #message {
+            text-align: center;
+            font-size: 16px;
+            color: #d33;
+            margin-top: 15px;
+        }
+
+        input {
+            padding: 5px 10px;
+            margin: 10px 0;
+        }
+
+        button {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <h2 style="text-align:center;">常用交互演示</h2>
+
+        <!-- 表格 -->
+        <table>
+            <thead>
+                <tr>
+                    <th>姓名</th>
+                    <th>年龄</th>
+                    <th>性别</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="name">张三</td>
+                    <td>25</td>
+                    <td>男</td>
+                    <td><button>点我</button></td>
+                </tr>
+                <tr>
+                    <td class="name">李四</td>
+                    <td>30</td>
+                    <td>女</td>
+                    <td><button>点我</button></td>
+                </tr>
+                <tr>
+                    <td class="name">王五</td>
+                    <td>28</td>
+                    <td>男</td>
+                    <td><button>点我</button></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- 输入框 -->
+        <div style="text-align:center;">
+            <input type="text" id="inputBox" placeholder="输入后按回车">
+        </div>
+
+        <p id="message"></p>
+
+        <footer>
+            <p>© 2025 FeonzmEko | 保留所有权利</p>
+            <p>Powered by FeonzmEko</p>
+        </footer>
+    </div>
+
+    <!-- 模块化JS -->
+    <script src="./js/event.js" type="module"></script>
+</body>
+
+</html>
