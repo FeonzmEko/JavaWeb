@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>员工列表</title>
+</head>
+<body>
+    <div id="app">
+        <h1>员工列表</h1>
+        <ul>
+            <li v-for="employee in employees" :key="employee.id">
+                {{ employee.name }} - {{ employee.position }}
+            </li>
+        </ul>
+    </div>
+
+    <script type="module">
+        import { createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
+
+        createApp({
+            data() {
+                return {
+                    employees: [
+                        { id: 1, name: 'Alice', position: '前端工程师' },
+                        { id: 2, name: 'Bob', position: '后端工程师' },
+                        { id: 3, name: 'Charlie', position: 'UI设计师' }
+                    ]
+                }
+            }
+        }).mount('#app')
+
+    </script>
+</body>
+</html>
