@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: tlias-web-management
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/tlias
+    username: root
+    password: 1234
+
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    #开启了额驼峰命名开关
+    map-underscore-to-camel-case: true
+
+logging:
+  level:
+    org:
+      springframework:
+        jdbc:
+          support:
+            JdbcTransactionManager: debug
+
+aliyun:
+  oss:
+    endpoint: https://oss-cn-beijing.aliyuncs.com
+    bucket-name: feko-java-ai-01
+    region: cn-beijing
