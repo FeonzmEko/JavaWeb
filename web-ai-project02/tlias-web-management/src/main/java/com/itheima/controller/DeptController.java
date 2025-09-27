@@ -1,5 +1,6 @@
 package com.itheima.controller;
 
+import com.itheima.exception.IsHaveDeptException;
 import com.itheima.pojo.Dept;
 import com.itheima.pojo.Result;
 import com.itheima.service.DeptService;
@@ -30,7 +31,10 @@ public class DeptController {
     @DeleteMapping("/depts")
     public Result delete(Integer id){
         log.info("根据ID删除部门：" + id);
-        deptService.deleteById(id);
+        int i = deptService.deleteById(id);
+        if(i == 0){
+            throw new IsHaveDeptException();
+        }
         return Result.success();
     }
 

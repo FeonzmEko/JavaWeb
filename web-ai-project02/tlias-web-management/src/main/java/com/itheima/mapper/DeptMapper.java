@@ -15,8 +15,8 @@ public interface DeptMapper {
     @Select("select * from dept order by update_time desc;")
     public List<Dept> findAll();
 
-    @Delete("delete from dept where id = #{id}")
-    public void deleteById(Integer id);
+    @Delete("delete from dept where id = #{id} and not exists(select 1 from emp where dept_id = dept_id )")
+    public int deleteById(Integer id);
 
     @Insert("insert into dept (id, name, create_time, update_time ) values (#{id}, #{name}, #{createTime},#{updateTime})")
     public void add(Dept dept);

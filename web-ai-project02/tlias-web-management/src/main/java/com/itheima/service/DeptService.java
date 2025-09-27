@@ -7,7 +7,7 @@ import java.util.List;
 public interface DeptService {
     public List<Dept> findAll();
 
-    public void deleteById(Integer id);
+    public int deleteById(Integer id);
 
     public void add(Dept dept);
 

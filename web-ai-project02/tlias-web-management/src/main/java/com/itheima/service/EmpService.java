@@ -15,4 +15,8 @@ public interface EmpService {
     public void save(Emp emp);
 
     public void delete(List<Integer> ids);
+
+    public Emp getInfo(Integer id);
+
+    public void update(Emp emp);
 }

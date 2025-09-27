@@ -20,8 +20,8 @@ public class DeptServiceImpl implements DeptService {
     }
 
     @Override
-    public void deleteById(Integer id) {
-        deptMapper.deleteById(id);
+    public int deleteById(Integer id) {
+        return deptMapper.deleteById(id);
     }
 
     @Override
