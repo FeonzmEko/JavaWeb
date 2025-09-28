@@ -1,0 +1,5 @@
+aliyun:
+  oss:
+    endpoint: https://oss-cn-beijing.aliyuncs.com
+    bucket-name: feko-java-ai-01
+    region: cn-beijing

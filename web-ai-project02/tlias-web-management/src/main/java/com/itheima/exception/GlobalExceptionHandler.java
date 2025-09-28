@@ -33,4 +33,10 @@ public class GlobalExceptionHandler {
         return Result.error("部门内仍有员工，不能删除！");
     }
 
+    @ExceptionHandler
+    public Result handleIsNotHaveEmp(IsNotHaveEmp i){
+        log.error("程序出错了");
+        return Result.error("员工信息有误，请重新输入！");
+    }
+
 }

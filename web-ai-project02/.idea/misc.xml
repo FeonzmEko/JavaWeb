@@ -4,7 +4,13 @@
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
+        <option value="$PROJECT_DIR$/itheima-utils/pom.xml" />
         <option value="$PROJECT_DIR$/tlias-web-management/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-web-config/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-aop-quickstart/pom.xml" />
+        <option value="$PROJECT_DIR$/aliyun-oss-spring-boot-starter/pom.xml" />
+        <option value="$PROJECT_DIR$/aliyun-oss-spring-boot-configure/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-autoconfiguration-test/pom.xml" />
       </list>
     </option>
   </component>

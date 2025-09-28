@@ -2,12 +2,17 @@ package com.itheima.service.Impl;
 
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
+import com.itheima.exception.IsNotHaveEmp;
 import com.itheima.mapper.EmpExprMapper;
 import com.itheima.mapper.EmpLogMapper;
 import com.itheima.mapper.EmpMapper;
 import com.itheima.pojo.*;
 import com.itheima.service.EmpLogService;
 import com.itheima.service.EmpService;
+import com.itheima.utils.JwtUtils;
+import io.jsonwebtoken.Jwt;
+import lombok.extern.java.Log;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -16,8 +21,11 @@ import org.springframework.util.CollectionUtils;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
+@Slf4j
 @Service
 public class EmpServiceImp implements EmpService {
 
@@ -108,6 +116,20 @@ public class EmpServiceImp implements EmpService {
             empExprMapper.insertBatch(exprList);
         }
 
+    }
+
+    @Override
+    public LoginInfo login(Emp emp) {
+        Emp e = empMapper.loginByUsernameAndPassword(emp);
+        Map<String,Object> claims = new HashMap<>();
+        claims.put("id",e.getId());
+        claims.put("username",e.getUsername());
+        String jwt = JwtUtils.generateJwt(claims);
+        LoginInfo result = new LoginInfo(e.getId(),e.getUsername(),e.getName(),jwt);
+        if(result == null){
+            throw new IsNotHaveEmp();
+        }
+        return result;
     }
 
 }

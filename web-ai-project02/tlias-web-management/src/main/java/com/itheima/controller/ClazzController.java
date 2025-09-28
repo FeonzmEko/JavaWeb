@@ -1,10 +1,7 @@
 package com.itheima.controller;
 
 import com.itheima.exception.IsHaveStudentExecption;
-import com.itheima.pojo.Clazz;
-import com.itheima.pojo.ClazzQueryParam;
-import com.itheima.pojo.PageResult;
-import com.itheima.pojo.Result;
+import com.itheima.pojo.*;
 import com.itheima.service.ClazzService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

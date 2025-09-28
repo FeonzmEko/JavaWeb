@@ -1,5 +1,6 @@
 package com.itheima.controller;
 
+import com.itheima.anno.Log;
 import com.itheima.exception.IsHaveDeptException;
 import com.itheima.pojo.Dept;
 import com.itheima.pojo.Result;
@@ -21,6 +22,7 @@ public class DeptController {
 
     @Autowired
     private DeptService deptService;
+    @Log
     @RequestMapping("/depts")
     public Result list(){
         log.info("查询全部部门数据");
@@ -28,6 +30,7 @@ public class DeptController {
         return Result.success(deptList);
     }
 
+    @Log
     @DeleteMapping("/depts")
     public Result delete(Integer id){
         log.info("根据ID删除部门：" + id);
@@ -38,6 +41,7 @@ public class DeptController {
         return Result.success();
     }
 
+    @Log
     @PostMapping("/depts")
     public Result add(@RequestBody Dept dept){
         log.info("添加部门：" + dept);
@@ -54,6 +58,7 @@ public class DeptController {
     }
 
     // 修改部门
+    @Log
     @PutMapping("/depts")
     public Result update(@RequestBody Dept dept){
         log.info("修改部门" + dept);

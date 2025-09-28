@@ -2,6 +2,7 @@ package com.itheima.mapper;
 
 import com.itheima.pojo.Emp;
 import com.itheima.pojo.EmpQueryParam;
+import com.itheima.pojo.LoginInfo;
 import org.apache.ibatis.annotations.*;
 
 import java.time.LocalDate;
@@ -47,4 +48,7 @@ public interface EmpMapper {
      */
     @MapKey("name")
     List<Map<String,Object>> countEmpGenderData();
+
+    @Select("select * from emp where username = #{username} and password = #{password}")
+    Emp loginByUsernameAndPassword(Emp emp);
 }
